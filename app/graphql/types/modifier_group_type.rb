@@ -9,6 +9,10 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
-    field :modifier, [Types::ModifierType]
+    field :modifiers, [Types::ModifierType]
+    
+    def modifiers
+      object.modifiers
+    end
   end
 end
