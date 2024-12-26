@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :section, through: :section_item
+  belongs_to :section
   has_one :section_item
   has_one :modifier
   has_many :modifier_groups
