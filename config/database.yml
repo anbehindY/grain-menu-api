@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: grain_menu_api_development
@@ -84,6 +83,10 @@ production:
     database: grain_menu_api_production
     username: grain_menu_api
     password: <%= ENV["GRAIN_MENU_API_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
+    port: <%= ENV["PGPORT"] %>
+    host: <%= ENV["PGHOST"] %>
+
   cache:
     <<: *primary_production
     database: grain_menu_api_production_cache
