@@ -10,6 +10,6 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
-    field :sections, [Types::SectionType]
+    field :sections, [ Types::SectionType ]
   end
 end

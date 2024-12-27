@@ -8,7 +8,7 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
-    field :items, [Types::ItemType]
+    field :items, [ Types::ItemType ]
     field :display_order, Integer
 
     def display_order
