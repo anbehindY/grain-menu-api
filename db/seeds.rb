@@ -11,8 +11,8 @@ menu = Menu.create!(label: "Lunch", state: "active", start_date: Date.today, end
 section1 = Section.create!(label: "Appetizers", description: "Start your meal off right")
 section2 = Section.create!(label: "Entrees", description: "The main course")
 
-menu_section1 = MenuSection.create(menu: menu, section: section1, display_order: 0)
-menu_section2 = MenuSection.create(menu: menu, section: section2, display_order: 1)
+MenuSection.create(menu: menu, section: section1, display_order: 0)
+MenuSection.create(menu: menu, section: section2, display_order: 1)
 puts "Menu created with sections"
 
 # Items that are not configurable
@@ -44,12 +44,12 @@ modifier_group1 = ModifierGroup.create(label: "Burger Toppings", selection_requi
 modifier_group2 = ModifierGroup.create(label: "Pizza Toppings", selection_required_min: 1, selection_required_max: 3, item_id: item4.id)
 puts "Modifier groups created"
 
-modifier1 = Modifier.create(display_order: 0, default_quantity: 1, price_override: 0.50, item: item5, modifier_group: modifier_group1)
-modifier2 = Modifier.create(display_order: 1, default_quantity: 1, price_override: 0.50, item: item6, modifier_group: modifier_group1)
-modifier3 = Modifier.create(display_order: 2, default_quantity: 1, price_override: 1.00, item: item7, modifier_group: modifier_group1)
+Modifier.create(display_order: 0, default_quantity: 1, price_override: 0.50, item: item5, modifier_group: modifier_group1)
+Modifier.create(display_order: 1, default_quantity: 1, price_override: 0.50, item: item6, modifier_group: modifier_group1)
+Modifier.create(display_order: 2, default_quantity: 1, price_override: 1.00, item: item7, modifier_group: modifier_group1)
 
-modifier4 = Modifier.create(display_order: 0, default_quantity: 1, price_override: 1.50, item: item8, modifier_group: modifier_group2)
-modifier5 = Modifier.create(display_order: 1, default_quantity: 1, price_override: 1.00, item: item9, modifier_group: modifier_group2)
-modifier6 = Modifier.create(display_order: 2, default_quantity: 1, price_override: 0.75, item: item10, modifier_group: modifier_group2)
+Modifier.create(display_order: 0, default_quantity: 1, price_override: 1.50, item: item8, modifier_group: modifier_group2)
+Modifier.create(display_order: 1, default_quantity: 1, price_override: 1.00, item: item9, modifier_group: modifier_group2)
+Modifier.create(display_order: 2, default_quantity: 1, price_override: 0.75, item: item10, modifier_group: modifier_group2)
 
 puts "Modifiers created"
