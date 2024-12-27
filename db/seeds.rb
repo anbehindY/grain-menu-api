@@ -3,8 +3,8 @@ MenuSection.destroy_all
 SectionItem.destroy_all
 Menu.destroy_all
 Section.destroy_all
-Item.destroy_all
 ModifierGroup.destroy_all
+Item.destroy_all
 
 menu = Menu.create!(label: "Lunch", state: "active", start_date: Date.today, end_date: Date.today + 7.days)
 
