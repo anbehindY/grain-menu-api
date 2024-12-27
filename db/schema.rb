@@ -10,22 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_26_130557) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_26_122342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.string "type"
+    t.string "item_type"
     t.string "label"
     t.string "description"
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "items_modifier_groups", id: false, force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "modifier_group_id", null: false
   end
 
   create_table "menu_sections", force: :cascade do |t|
@@ -48,19 +43,25 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_26_130557) do
   end
 
   create_table "modifier_groups", force: :cascade do |t|
+    t.bigint "item_id", null: false
     t.string "label"
     t.integer "selection_required_min"
     t.integer "selection_required_max"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_modifier_groups_on_item_id"
   end
 
   create_table "modifiers", force: :cascade do |t|
     t.integer "display_order", default: 0
     t.integer "default_quantity", default: 0
     t.float "price_override"
+    t.bigint "item_id", null: false
+    t.bigint "modifier_group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_modifiers_on_item_id"
+    t.index ["modifier_group_id"], name: "index_modifiers_on_modifier_group_id"
   end
 
   create_table "section_items", force: :cascade do |t|
@@ -82,6 +83,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_26_130557) do
 
   add_foreign_key "menu_sections", "menus"
   add_foreign_key "menu_sections", "sections"
+  add_foreign_key "modifier_groups", "items"
+  add_foreign_key "modifiers", "items"
+  add_foreign_key "modifiers", "modifier_groups"
   add_foreign_key "section_items", "items"
   add_foreign_key "section_items", "sections"
 end
