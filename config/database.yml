@@ -83,6 +83,9 @@ production:
     database: <%= ENV['DATABASE_URL'] %>
     username: grain_menu_api
     password: <%= ENV["GRAIN_MENU_API_DATABASE_PASSWORD"] %>
+    url: <%= ENV['DATABASE_URL'] %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    sslmode: require
 
   cache:
     <<: *primary_production
