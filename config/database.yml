@@ -80,7 +80,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: grain_menu_api_production
+    database: <%= ENV['DATABASE_URL'] %>
     username: grain_menu_api
     password: <%= ENV["GRAIN_MENU_API_DATABASE_PASSWORD"] %>
 
