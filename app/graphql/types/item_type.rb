@@ -6,6 +6,7 @@ module Types
 
     field :id, ID, null: false
     field :item_type, String
+    field :available, Boolean
     field :label, String
     field :description, String
     field :price, Float

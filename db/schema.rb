@@ -19,6 +19,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_26_122342) do
     t.string "label"
     t.string "description"
     t.float "price"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +78,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_26_122342) do
   create_table "sections", force: :cascade do |t|
     t.string "label"
     t.string "description"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

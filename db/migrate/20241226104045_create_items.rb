@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration[8.0]
       t.string :label
       t.string :description
       t.float :price
+      t.boolean :available, default: true
 
       t.timestamps
     end
