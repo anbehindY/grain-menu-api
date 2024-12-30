@@ -1,6 +1,6 @@
 module Queries
   class ModifierGroupsQuery < GraphQL::Schema::Resolver
-    type [Types::ModifierGroupType], null: false
+    type [ Types::ModifierGroupType ], null: false
     description "Fetch all modifier groups"
 
     def resolve

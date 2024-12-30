@@ -1,6 +1,6 @@
 module Queries
   class SectionsQuery < GraphQL::Schema::Resolver
-    type [Types::SectionType], null: false
+    type [ Types::SectionType ], null: false
     description "Fetch all sections"
 
     def resolve

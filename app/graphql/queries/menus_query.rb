@@ -1,6 +1,6 @@
 module Queries
   class MenusQuery < GraphQL::Schema::Resolver
-    type [Types::MenuType], null: false
+    type [ Types::MenuType ], null: false
     description "Fetch all menus"
 
     def resolve

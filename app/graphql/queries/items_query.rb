@@ -1,6 +1,6 @@
 module Queries
   class ItemsQuery < GraphQL::Schema::Resolver
-    type [Types::ItemType], null: false
+    type [ Types::ItemType ], null: false
     description "Fetch all items"
 
     def resolve
