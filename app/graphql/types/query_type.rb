@@ -5,30 +5,15 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
     description "The query root of this schema"
-    field :menus, [ Types::MenuType ], null: false
-    field :sections, [ Types::SectionType ], null: false
-    field :items, [ Types::ItemType ], null: false
-    field :modifier_groups, [ Types::ModifierGroupType ], null: false
-    field :modifiers, [ Types::ModifierType ], null: false
-
-    def menus
-      Menu.all
-    end
-
-    def sections
-      Section.all
-    end
-
-    def items
-      Item.all
-    end
-
-    def modifier_groups
-      ModifierGroup.all
-    end
-
-    def modifiers
-      Modifier.all
-    end
+    field :menus, resolver: Queries::MenusQuery
+    field :menu, resolver: Queries::MenuQuery
+    field :sections, resolver: Queries::SectionsQuery
+    field :section, resolver: Queries::SectionQuery
+    field :items, resolver: Queries::ItemsQuery
+    field :item, resolver: Queries::ItemQuery
+    field :modifier_groups, resolver: Queries::ModifierGroupsQuery
+    field :modifier_group, resolver: Queries::ModifierGroupQuery
+    field :modifiers, resolver: Queries::ModifiersQuery
+    field :modifier, resolver: Queries::ModifierQuery
   end
 end
