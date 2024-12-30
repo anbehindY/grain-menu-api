@@ -55,12 +55,12 @@ This is a graphql endpoint to access menus, sections, items and, their modifier 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- https://grain-menu-api-9y67.onrender.com/graphql
+- https://grain-menu-api-9y67.onrender.com
 
 > You can test this by running the following in your shell.
 
 ```sh
-curl -X POST https://grain-menu-api-9y67.onrender.com/graphql \
+curl -X POST https://grain-menu-api-9y67.onrender.com \
   -H "Content-Type: application/json" \
   -d '{
     "query": "query { menus { label state startDate endDate sections { id displayOrder label description items { id itemType label description price modifierGroups { id label selectionRequiredMax selectionRequiredMin modifiers { id displayOrder priceOverride defaultQuantity item { label } } } } } } }"

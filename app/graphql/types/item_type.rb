@@ -2,6 +2,8 @@
 
 module Types
   class ItemType < Types::BaseObject
+    description "An item that might be a component of a meal or a complete meal"
+
     field :id, ID, null: false
     field :item_type, String
     field :label, String
