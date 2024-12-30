@@ -81,8 +81,8 @@ production:
   primary: &primary_production
     <<: *default
     database: <%= ENV['DATABASE_URL'] %>
-    username: grain_menu_api
-    password: <%= ENV["GRAIN_MENU_API_DATABASE_PASSWORD"] %>
+    username: grain_menu_database
+    password: <%= ENV["GRAIN_MENU_DATABASE_DATABASE_PASSWORD"] %>
     url: <%= ENV['DATABASE_URL'] %>
     sslmode: require
 
