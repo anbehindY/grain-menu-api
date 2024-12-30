@@ -14,5 +14,9 @@ module Types
     def display_order
       object.menu_section.display_order
     end
+
+    def items
+      object.items.order(display_order: :asc)
+    end
   end
 end

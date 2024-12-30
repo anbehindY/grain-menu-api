@@ -14,6 +14,7 @@ module Types
 
     field :modifier_groups, [ Types::ModifierGroupType ]
     field :section, Types::SectionType
+    field :display_order, Integer
 
     def display_order
       object.section_item.display_order

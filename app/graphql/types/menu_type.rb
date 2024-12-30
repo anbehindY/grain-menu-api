@@ -11,5 +11,9 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
     field :sections, [ Types::SectionType ]
+
+    def sections
+      object.sections.order(display_order: :asc)
+    end
   end
 end
